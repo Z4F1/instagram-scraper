@@ -1,0 +1,21 @@
+{
+  "name": "instagram-tracker",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "prod": "nodemon app",
+    "start": "node app"
+  },
+  "author": "Pelle Pastoor",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0"
+  }
+}

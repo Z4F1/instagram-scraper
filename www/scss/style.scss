@@ -1,0 +1,179 @@
+//sass scss/style.scss css/style.css --watch --style=compressed --no-source-map
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+$primary: rgb(41, 185, 206);
+$secondary: #636363;
+$error: rgb(148, 91, 91);
+$loginError: darken($primary, 10);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Comfortaa";
+}
+
+a {
+    text-decoration: none;
+}
+
+h {
+    @for $i from 1 through 6 {
+        &#{$i} {
+            font-family: "Bebas Neue";
+            letter-spacing: #{6-$i}px;
+            color: $secondary;
+            margin: 0;
+        }
+    }
+}
+
+%container {
+    padding: 10px;
+}
+
+.container {
+    @extend %container;
+
+    &-center {
+        @extend %container;
+        text-align: center;
+    }
+}
+
+.toolbar {
+    a {
+        display: inline-block;
+        padding: 10px;
+        color: $primary;
+
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken($primary, 10);
+        }
+    }
+}
+
+.muted {
+    font-size: 10px;
+    color: #e6e6e6;
+    margin-bottom: 0;
+}
+
+#account-data {
+    display: none;
+}
+
+.accounts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .account {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 400px;
+        height: 100px;
+
+        margin: 10px;
+        padding: 10px 20px;
+
+        border-radius: 10px;
+        background-color: $primary;
+
+        transition: background 0.2s;
+
+        h2 {
+            color: white;
+        }
+
+        img {
+            border-radius: 50%;
+            height: 80%;
+        }
+
+        p:not(.muted) {
+            color: #e6e6e6;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        &:hover {
+            background-color: darken($primary, 10);
+        }
+    }
+}
+
+.image-fullsize {
+    width: 100vw;
+    height: 100vh;
+
+    object-fit: cover;
+    object-position: center center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+.login-title {
+    font-family: 'Bebas Neue';
+    font-size: 60px;
+    letter-spacing: 16px;
+    margin: auto;
+
+    color: $secondary;
+}
+
+.login-error {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    letter-spacing: 2px;
+
+    margin: auto;
+    margin-bottom: 12px;
+
+    color: $loginError;
+    text-align: left;
+}
+
+.login-form {
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    input {
+        display: block;
+        width: 100%;
+
+        margin: 10px 0;
+        padding: 15px;
+
+        border: 1px solid transparent;
+        color: white;
+        background-color: rgba($secondary, 0.65);
+        text-align: right;
+
+        &[type=submit] {
+            background-color: $primary !important;
+            text-align: center;
+        }
+    }
+
+    input::placeholder {
+        color: white;
+        text-align: right;
+    }
+}
